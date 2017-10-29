@@ -1,0 +1,21 @@
+{
+  "name": "jquery-set-get-params",
+  "description": "Add and change GET parameters in address bar",
+  "main": "index.js",
+  "authors": [
+    "Max Zhurkin"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "reset-stylus": "*"
+  }
+}

@@ -1,0 +1,38 @@
+column(count)
+	if count == 12
+		width 100%
+	if count == 11
+		width 91.66%
+	if count == 10
+		width 83.33%
+	if count == 9
+		width 75%
+	if count == 8
+		width 66.66%
+	if count == 7
+		width 58.33%
+	if count == 6
+		width 50%
+	if count == 5
+		width 41.66%
+	if count == 4
+		width 33.33%
+	if count == 3
+		width 25%
+	if count == 2
+		width 16.66%
+	if count == 1
+		width 8.333%
+
+// Use: (+)
+// +placeholder()
+//     color color...
+placeholder()
+	&::-webkit-input-placeholder
+		{block}
+	&:-moz-placeholder
+		{block}
+	&::-moz-placeholder
+		{block}
+	&:-ms-input-placeholder
+		{block}

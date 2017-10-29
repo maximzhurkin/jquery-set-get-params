@@ -1,0 +1,159 @@
+doctype html
+html(lang='ru')
+	head
+		meta(charset='utf-8')
+		meta(name='description', content="")
+		meta(name='keywords', content="")
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(content='telephone=no', name='format-detection')
+		title jQuery setGetParams plugin
+		// if IE meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		// if lt IE 9 script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
+		link(rel='shortcut icon', href='assets/images/favicons/favicon.ico', type='image/x-icon')
+		link(rel='mask-icon' href='assets/images/favicons/favicon.svg' color='#000000')
+		link(rel='apple-touch-icon', href='assets/images/favicons/apple-touch-icon.png')
+		each size in ['57x57', '72x72', '76x76', '114x114', '120x120', '144x144', '152x152', '180x180']
+			link(rel='apple-touch-icon', sizes=size, href='assets/images/favicons/apple-touch-icon-' + size + '.png')
+		link(type='text/css', rel='stylesheet', href='assets/styles/bundle.css')
+
+	body
+		header.section.section--blue.section--skew.section--top
+			.section__container
+				.header
+					.header__content
+						h1.header__heading jQuery setGetParams Plugin
+						.header__description Plugin allows you to add and change GET parameters in the address bar
+						.header__buttons
+							span.header__button
+								a.button.button--yellow(href='https://github.com/maximzhurkin/jquery-set-get-params/archive/master.zip') Download plugin
+							span.header__button
+								a.button.button--white(href='https://github.com/maximzhurkin/jquery-set-get-params') Github
+		section.section
+			.section__container
+				.section__content
+					h2.section__heading Demo
+				.butts.group
+					.butts__lside
+						.categories
+							ul.categories__list
+								li.categories__item
+									a.categories__link.categories__link--active(href='#', data-id='1') Bananas
+								li.categories__item
+									a.categories__link(href='#', data-id='2') Corn
+								li.categories__item
+									a.categories__link(href='#', data-id='3') Avocado
+								li.categories__item
+									a.categories__link(href='#', data-id='4') Beans
+								li.categories__item
+									a.categories__link(href='#', data-id='5') Courgettes
+					.butts__main
+						.butts__search
+							input.input.input--search(type='search', name='search', placeholder='Enter search query and press enter')
+						.butts__sorting.group
+							.butts__sorting-item.group
+								.butts__sorting-caption Sort by:
+								.butts__sorting-select
+									.select
+										select(name='sort')
+											option(value='id|desc') Featured
+											option(value='price|asc') Price: Low to High
+											option(value='price|desc') Price: High to Low
+							.butts__sorting-item.butts__sorting-item--right.group
+								.butts__sorting-caption Count on page:
+								.butts__sorting-select
+									.select
+										select(name='count')
+											option(value='10') 10
+											option(value='50') 50
+											option(value='100') 100
+						.butts__products
+						.butts__pagination
+							.pagination
+								ul.pagination__list
+									li.pagination__item
+										a.pagination__link(href='#', data-page='1') Previous Page
+									li.pagination__item
+										a.pagination__link.pagination__link--active(href='#', data-page='1') 1
+									li.pagination__item
+										a.pagination__link(href='#', data-page='2') 2
+									li.pagination__item
+										a.pagination__link(href='#', data-page='3') 3
+									li.pagination__item
+										a.pagination__link(href='#', data-page='2') Next Page
+		section.section.section--gray.section--skew
+			.section__container
+				.section__content
+					h2.section__heading Use
+				.section__row.group
+					.section__column.section__column--six
+						h3.section__heading.section__heading--three Include jQuery and setGetParams
+						.section__code
+							code.code
+								p &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+								p &lt;script src="jquery-set-get-params.min.js"&gt;&lt;/script&gt;
+					.section__column.section__column--six
+						h3.section__heading.section__heading--three Bind plugin on event
+						.section__code
+							code.code
+								p $(el).click(function() {
+								p &nbsp;&nbsp;$().setGetParams({
+								p &nbsp;&nbsp;&nbsp;&nbsp;'param1': value1,
+								p &nbsp;&nbsp;&nbsp;&nbsp;'param2': value2
+								p &nbsp;&nbsp;});
+								p });
+		section.section
+			.section__container
+				.section__content
+					h2.section__heading Examples
+				.section__row.group
+					.section__column.section__column--six
+						h3.section__heading.section__heading--three Pagination
+						.section__code
+							code.code
+								p &lt;nav class="pagination"&gt;
+								p &nbsp;&nbsp;&lt;ul class="pagination__list"&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="pagination__item"&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="pagination__link" href="#" data-page='1'&gt;1&lt;/a&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="pagination__item"&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="pagination__link" href="#" data-page='2'&gt;2&lt;/a&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;li class="pagination__item"&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a class="pagination__link" href="#" data-page='3'&gt;3&lt;/a&gt;
+								p &nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
+								p &nbsp;&nbsp;&lt;/ul&gt;
+								p &lt;/nav&gt;
+								p &nbsp;
+								p &lt;script&gt;
+								p &nbsp;&nbsp;$('.pagination__link').click(function() {
+								p &nbsp;&nbsp;&nbsp;&nbsp;var page = $(this).data('page');
+								p &nbsp;
+								p &nbsp;&nbsp;&nbsp;&nbsp;$().setGetParams({
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'page': page
+								p &nbsp;&nbsp;&nbsp;&nbsp;});
+								p &nbsp;&nbsp;});
+								p &lt;/script&gt;
+					.section__column.section__column--six
+						h3.section__heading.section__heading--three Sorting
+						.section__code
+							code.code
+								p &lt;select name="sorting"&gt;
+								p &nbsp;&nbsp;&lt;option value="id|desc"&gt;Featured&lt;/option&gt;
+								p &nbsp;&nbsp;&lt;option value="price|asc"&gt;Price: Low to High&lt;/option&gt;
+								p &nbsp;&nbsp;&lt;option value="price|desc"&gt;Price: High to Low&lt;/option&gt;
+								p &lt;/select&gt;
+								p &nbsp;
+								p &lt;script&gt;
+								p &nbsp;&nbsp;$('select[name=sorting]').change(function() {
+								p &nbsp;&nbsp;&nbsp;&nbsp;var sort = $(@).val();
+								p &nbsp;
+								p &nbsp;&nbsp;&nbsp;&nbsp;$().setGetParams({
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'sort': sort
+								p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'page': 1
+								p &nbsp;&nbsp;&nbsp;&nbsp;});
+								p &nbsp;&nbsp;});
+								p &lt;/script&gt;
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		script(src="assets/scripts/jquery-set-get-params.min.js")
+		script(src="assets/scripts/app.min.js")
