@@ -21,8 +21,8 @@ for ($i = 1; $i <= 3; $i ++) {
 	else { $pagination[] = array( 'title' => $i, 'page' => $i, 'active' => false); }
 }
 if (isset($_GET['page']) && $_GET['page'] < 3) { $pagination[] = array( 'title' => 'Next page', 'page' => (intval($_GET['page']) + 1), 'active' => false ); }
-else if (isset($_GET['page']) && $_GET['page'] == 3) { $pagination[] = array( 'title' => 'Previous page', 'page' => 3, 'active' => false ); }
-else { $pagination[] = array( 'title' => 'Previous page', 'page' => 2, 'active' => false ); }
+else if (isset($_GET['page']) && $_GET['page'] == 3) { $pagination[] = array( 'title' => 'Next page', 'page' => 3, 'active' => false ); }
+else { $pagination[] = array( 'title' => 'Next page', 'page' => 2, 'active' => false ); }
 
 ?>
 <!DOCTYPE html>
