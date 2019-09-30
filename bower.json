@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.1",
-    "reset-stylus": "*"
+    "jquery": "^3.1.1"
   }
 }
